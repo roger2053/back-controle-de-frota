@@ -42,13 +42,13 @@ class CreateSheetsTable extends Migration
             $table->text('requester_contact')->nullable(); // telefone do solicitante
             $table->integer('count_victims')->nullable();
             $table->longText('complaint')->nullable(); // queixa do paciente
-            $table->text('duration')->nullable(); 
+            $table->text('duration')->nullable();
             $table->text('diagnostic_hypothesis')->nullable();
             $table->text('conduct')->nullable();
             $table->text('how_much_time')->nullable();
             $table->longText('remedy_consult')->nullable();
             $table->longText('observations')->nullable();
-            
+
             // Pacient
             $table->text('patient_name')->nullable();
             $table->text('patient_contact')->nullable();
@@ -210,7 +210,7 @@ class CreateSheetsTable extends Migration
             $table->softDeletes();
         });
 
-        DB::statement("ALTER TABLE sheets AUTO_INCREMENT = 152400;");
+        // DB::statement("ALTER TABLE sheets AUTO_INCREMENT = 152400;");
     }
 
     /**

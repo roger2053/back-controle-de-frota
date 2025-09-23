@@ -39,12 +39,12 @@ class SheetsController extends Controller
             $search = $request->get('search', '');
 
             // Query base
-            $query = Sheet::leftJoin('users', 'users.id', 'sheets.doctor_id')
+            $query = Sheet::leftJoin('users', 'users.id', 'sheets.user_id')
                 ->leftJoin('cities', 'cities.id', 'sheets.patient_city')
                 ->leftJoin('severities', 'severities.id', 'sheets.severity_id')
                 ->leftJoin('statuses', 'statuses.id', 'sheets.status_id')
                 ->leftJoin('transports', 'transports.id', 'sheets.used_transport')
-                ->select('sheets.doctor_id', 'sheets.protocol', 'sheets.requester_name', 'sheets.requester_contact', 'sheets.complaint', 'sheets.created_at', 'severities.severity', 'cities.city', 'transports.transport as used_transport', 'statuses.status')
+                ->select('sheets.user_id', 'sheets.protocol', 'sheets.requester_name', 'sheets.requester_contact', 'sheets.complaint', 'sheets.created_at', 'severities.severity', 'cities.city', 'transports.transport as used_transport', 'statuses.status')
                 ->when(!empty($request->start_date) && !empty($request->end_date), function ($q) use ($start, $end) {
                     return $q->whereBetween('sheets.created_at', [$start, $end]);
                 })
@@ -160,13 +160,13 @@ class SheetsController extends Controller
                     $sheet->patient_age = null;
                 }
 
-                // Obtém o nome do médico
-                if ($sheet->doctor_id) {
-                    $doctor = User::select('crm', 'name')->find($sheet->doctor_id);
-                    if ($doctor) {
-                        $sheet->doctor = $doctor->crm . " - " . $doctor->name;
+                // Obtém o nome do Técnico
+                if ($sheet->user_id) {
+                    $user = User::select('crm', 'name')->find($sheet->user_id);
+                    if ($user) {
+                        $sheet->user = $user->crm . " - " . $user->name;
                     } else {
-                        $sheet->doctor = "";
+                        $sheet->user = "";
                     }
                 }
                 $sheet->created_at_formated = date('d/m/Y H:i:s', strtotime($sheet->created_at . ' - 3 hours'));

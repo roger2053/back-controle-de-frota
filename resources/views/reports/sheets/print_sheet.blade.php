@@ -78,9 +78,9 @@
 <body>
 
     <header>
-        <h1 style="margin-top:0px;padding:5px;text-align:center"> Samu Senhor do Bonfim - BA <br />
-            {{ $sheets->protocol ?? '' }} | Ficha de atendimento 
-            <br/> 
+        <h1 style="margin-top:0px;padding:5px;text-align:center"> TransSaúde - Itiuba - BA <br />
+            {{ $sheets->protocol ?? '' }} | Ficha de atendimento
+            <br/>
             {{ $sheets->status ? 'Status da Ficha: ' . $sheets->status : '' }}
             <br/>
             {{ $sheets->stopwatch ? 'Duração: ' . $sheets->stopwatch : '' }}
@@ -89,7 +89,7 @@
 
         <table style="table-layout: fixed; width:100%; margin-bottom:2px; border-bottom:1px solid #ccc;">
             <thead>
-                
+
             </thead>
         </table>
     </header>
