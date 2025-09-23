@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/ODelI1aHBYDBqgeIAH2zlNzbP97U9sKh0jjxbPbfOKg.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGLsbIrGiHa6JIepkyt5c0A0.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: italic;
+    font-weight: normal;
+    src: local('Source Sans Pro Italic'), local('SourceSansPro-It'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/M2Jd71oPJhLKp0zdtTvoM0DauxaEVho0aInXGvhmB4k.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: italic;
+    font-weight: bold;
+    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldIt'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/fpTVHK8qsXbIeTHTrnQH6Edtd7Dq2ZflsctMEexj2lw.ttf) format('truetype');
+}
+
+@page{ margin: 0px 30px; }
+
+body {
+    font-family: sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+header {
+    display: flex;
+    text-align: center;
+    background-color: #eee;
+    padding-bottom: 5px;
+    margin-top: 40px;
+}
+
+footer {
+    position: fixed; 
+    bottom: 80px; 
+    left: 0cm; 
+    right: 0cm;
+    height: 2cm;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    line-height: 12px;
+    font-size: 9pt;
+    text-align: center;
+}
+
+small {
+    font-size: 8pt;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin-bottom: -3.5cm;
+}
+
+.title, .desc, .obs {
+    line-height: 1;
+}
+
+.obs {
+    margin-top: -10px;
+}
+
+
+.obs ul {
+    margin-left: 1cm;
+}
+
+.obs ul li {
+    font-size: 10pt;
+}
+
+th {
+    font-size: 9pt;
+}
+
+a {
+    font-size: 8pt;
+}
+
+.logo-sus{
+    width: 100px;
+    float: left;
+}
+.label-left{
+    float: left;
+    margin-left: 10px;
+    text-align: left;
+}
+.label-folha{
+    float: right;
+    border: 1px solid;
+    padding: 8px;
+    border-color: #9d9d9e;
+    margin-left: 10px;
+    text-align: right;
+}
+.label-municipio{
+    float: left;
+    margin-left: 10px;
+    text-align: left;
+}
+.div-bordered{
+    border: 1px solid;
+    padding: 4px;
+    border-color: #15151f;
+    float: left;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.container-bordered{
+    border: 1px solid;
+    border-color: #15151f;
+}
+.div-cell{
+    width: 17%; 
+    display: table-cell; 
+    border: 1px solid; 
+    padding: 4px;
+    text-align: center;
+}
