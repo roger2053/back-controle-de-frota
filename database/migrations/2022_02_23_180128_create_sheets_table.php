@@ -105,6 +105,32 @@ class CreateSheetsTable extends Migration
             $table->text('used_transport_start')->nullable(); // Partida
 
             // Transports
+            $table->text('transport_plate')->nullable();
+            $table->text('transport_driver')->nullable();
+            $table->text('transport_driver_phone')->nullable();
+            $table->text('transport_comunication')->nullable(); // Comunicação
+            $table->integer('used_transport_team')->unsigned()->nullable();
+            $table->float('transport_km_start')->default(0.0)->nullable();
+            $table->float('transport_km_end')->default(0.0)->nullable();
+            $table->timestamp('transport_driver_at')->nullable();
+            $table->timestamp('transport_pacient_at')->nullable();
+
+            $table->text('transport_doctor')->nullable();
+            $table->text('transport_nurse')->nullable();
+            $table->text('transport_technical')->nullable();
+
+            $table->text('used_transport_return')->nullable();
+            $table->text('transport_plate_return')->nullable();
+            $table->text('transport_driver_return')->nullable();
+            $table->text('transport_driver_phone_return')->nullable();
+            $table->text('transport_comunication_return')->nullable(); // Comunicação
+            $table->float('transport_km_start_return')->default(0.0)->nullable();
+            $table->float('transport_km_end_return')->default(0.0)->nullable();
+            $table->timestamp('transport_driver_at_return')->nullable();
+            $table->timestamp('transport_pacient_at_return')->nullable();
+            $table->integer('used_transport_team_return')->unsigned()->nullable();
+
+
             $table->text('transport_local')->nullable();
             $table->text('transport_origin')->nullable();
             $table->text('transport_destination')->nullable();
