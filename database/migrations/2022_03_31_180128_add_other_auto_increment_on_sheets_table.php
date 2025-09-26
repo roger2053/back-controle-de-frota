@@ -15,7 +15,7 @@ class AddOtherAutoIncrementOnSheetsTable extends Migration
     public function up()
     {
 
-        DB::statement("ALTER TABLE sheets AUTO_INCREMENT = 154084;");
+        // DB::statement("ALTER TABLE sheets AUTO_INCREMENT = 154084;");
     }
 
     /**
