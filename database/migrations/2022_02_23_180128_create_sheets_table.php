@@ -75,7 +75,7 @@ class CreateSheetsTable extends Migration
             $table->text('patient_state')->nullable();
             $table->text('patient_reference_point')->nullable();
 
-            $table->string('patient_locale')->unsigned()->nullable();
+            $table->string('patient_locale')->nullable();
 
 
             // $table->integer('patient_locale')->unsigned()->nullable();
