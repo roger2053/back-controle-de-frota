@@ -75,8 +75,11 @@ class CreateSheetsTable extends Migration
             $table->text('patient_state')->nullable();
             $table->text('patient_reference_point')->nullable();
 
-            $table->integer('patient_locale')->unsigned()->nullable();
-            $table->foreign('patient_locale')->references('id')->on('locales');
+            $table->string('patient_locale')->unsigned()->nullable();
+
+
+            // $table->integer('patient_locale')->unsigned()->nullable();
+            // $table->foreign('patient_locale')->references('id')->on('locales');
 
 
             // Transfer
@@ -108,16 +111,13 @@ class CreateSheetsTable extends Migration
             $table->text('transport_plate')->nullable();
             $table->text('transport_driver')->nullable();
             $table->text('transport_driver_phone')->nullable();
+            $table->text('transport_driver_observation')->nullable();
             $table->text('transport_comunication')->nullable(); // Comunicação
-            $table->integer('used_transport_team')->unsigned()->nullable();
             $table->float('transport_km_start')->default(0.0)->nullable();
             $table->float('transport_km_end')->default(0.0)->nullable();
             $table->timestamp('transport_driver_at')->nullable();
             $table->timestamp('transport_pacient_at')->nullable();
 
-            $table->text('transport_doctor')->nullable();
-            $table->text('transport_nurse')->nullable();
-            $table->text('transport_technical')->nullable();
 
             $table->text('used_transport_return')->nullable();
             $table->text('transport_plate_return')->nullable();

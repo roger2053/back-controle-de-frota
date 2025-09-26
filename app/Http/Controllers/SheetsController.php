@@ -586,24 +586,16 @@ class SheetsController extends Controller
             unset($request['created_at_formated']);
             $sheets = Sheet::find($id);
 
+
             if (!$sheets) {
 
                 return response(['status' => "error", 'data' => "", 'message' => "Ficha não encontrada!"], 404);
             } else {
-
+                if ($sheets->updated_at > $sheets->created_at && $sheets->status_id == 1) {
+                    $request['status_id'] = 2; // andamento
+                }
                 $request = $request->all();
-                // foreach ($request as $key => $param) {
-
-                //     if($key === "used_transport_team" || $key === "used_transport"){
-                //         continue;
-                //     }
-
-                //     if (empty($param) || is_null($param) ) {
-                //         unset($request[$key]);
-                //     }
-                // }
                 $sheets->update($request);
-
                 return response(['status' => "success", 'data' => $sheets, 'message' => "Ficha atualizada com sucesso!"], 200);
             }
         } catch (Exception $e) {
@@ -662,5 +654,24 @@ class SheetsController extends Controller
         }
 
         return response(['success' => true, 'data' => $sheets], 200);
+    }
+
+    public function finishSheet(Request $request, $id)
+    {
+        try {
+            $sheets = Sheet::find($id);
+
+            if (!$sheets) {
+                return response(['status' => "error", 'data' => "", 'message' => "Ficha não encontrada!"], 404);
+            } else {
+                $request = $request->all();
+                $request['status_id'] = 3; // finalizada
+                $sheets->update($request);
+                return response(['status' => "success", 'data' => $sheets, 'message' => "Ficha finalizada com sucesso!"], 200);
+            }
+        } catch (Exception $e) {
+
+            return response(['status' => "error", 'data' => "", 'message' => $e->getMessage()], 200);
+        }
     }
 }

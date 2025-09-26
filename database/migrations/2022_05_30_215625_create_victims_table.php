@@ -36,7 +36,7 @@ class CreateVictimsTable extends Migration
             $table->text('pulse')->nullable(); // Pulsos
             $table->text('hgt')->nullable();
             $table->text('others')->nullable();
-            $table->text('acute_pain')->nullable(); 
+            $table->text('acute_pain')->nullable();
             $table->text('diagnostic_hypothesis')->nullable();
             $table->text('conduct')->nullable();
             $table->text('how_much_time')->nullable();
@@ -67,6 +67,9 @@ class CreateVictimsTable extends Migration
 
             $table->integer('sheet_protocol')->unsigned()->nullable();
             $table->foreign('sheet_protocol')->references('protocol')->on('sheets');
+            $table->longText('procediments')->nullable();
+
+
 
             $table->timestamps();
             $table->softDeletes();

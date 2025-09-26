@@ -37,6 +37,8 @@ Route::group(['middleware' => ['check.token'], 'namespace' => 'App\Http\Controll
     Route::patch('sheets/restore/{protocol}', 'SheetsController@restore');
     Route::resource('sheets', 'SheetsController');
     Route::post('sheet/{id}/update', 'SheetsController@update');
+    Route::put('sheet/{id}/finish', 'SheetsController@finishSheet');
+
 
     Route::resource('hospitals', 'HospitalsController');
     Route::resource('emergencies', 'EmergenciesController');
