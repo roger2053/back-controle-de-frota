@@ -38,7 +38,7 @@ Route::group(['middleware' => ['check.token'], 'namespace' => 'App\Http\Controll
     Route::resource('sheets', 'SheetsController');
     Route::post('sheet/{id}/update', 'SheetsController@update');
     Route::put('sheet/{id}/finish', 'SheetsController@finishSheet');
-
+    Route::resource('gas_points', 'GasPointController');
 
     Route::resource('hospitals', 'HospitalsController');
     Route::resource('emergencies', 'EmergenciesController');

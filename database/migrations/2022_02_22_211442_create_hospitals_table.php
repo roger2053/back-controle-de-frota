@@ -21,6 +21,7 @@ class CreateHospitalsTable extends Migration
             $table->string("number")->nullable();
             $table->string("district")->nullable();
             $table->string("complement")->nullable();
+            $table->enum("type", ["hospital", "psf", "samu","others"])->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

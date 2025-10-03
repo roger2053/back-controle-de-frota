@@ -111,6 +111,8 @@ class CreateSheetsTable extends Migration
             $table->text('transport_plate')->nullable();
             $table->text('transport_driver')->nullable();
             $table->text('transport_driver_phone')->nullable();
+            $table->text('transport_driver_phone_2')->nullable();
+            $table->text('transport_driver_phone_3')->nullable();
             $table->text('transport_driver_observation')->nullable();
             $table->text('transport_comunication')->nullable(); // Comunicação
             $table->float('transport_km_start')->default(0.0)->nullable();
@@ -123,6 +125,8 @@ class CreateSheetsTable extends Migration
             $table->text('transport_plate_return')->nullable();
             $table->text('transport_driver_return')->nullable();
             $table->text('transport_driver_phone_return')->nullable();
+            $table->text('transport_driver_phone_2_return')->nullable();
+            $table->text('transport_driver_phone_3_return')->nullable();
             $table->text('transport_comunication_return')->nullable(); // Comunicação
             $table->float('transport_km_start_return')->default(0.0)->nullable();
             $table->float('transport_km_end_return')->default(0.0)->nullable();
@@ -205,6 +209,12 @@ class CreateSheetsTable extends Migration
             // Support
             $table->boolean('support_fireplace')->nullable();
             $table->boolean('support_military_police')->nullable();
+            $table->boolean('support_gcm')->nullable();
+            $table->boolean('support_caps')->nullable();
+            $table->boolean('support_defense_civil')->nullable();
+            $table->boolean('support_creas')->nullable();
+            $table->boolean('support_counsel')->nullable();
+            $table->boolean('support_civil_police')->nullable();
 
             // Trauma
             $table->text('trauma_mechanism_trauma')->nullable();
@@ -231,6 +241,8 @@ class CreateSheetsTable extends Migration
             $table->boolean('incident_refused_service')->nullable();
             $table->boolean('incident_refused_hospitalization')->nullable();
             $table->longText('another_details')->nullable();
+            $table->longText('is_canceled')->nullable();
+            $table->longText('canceled_reason')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

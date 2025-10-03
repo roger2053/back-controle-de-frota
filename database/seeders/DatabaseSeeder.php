@@ -26,5 +26,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LocalesTableSeeder::class);
         $this->call(AddNotInformedLocale::class);
         $this->call(AddMoreEmergencyTypes::class);
+        $this->call(GasPointSeeder::class);
     }
 }
